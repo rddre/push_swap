@@ -1,8 +1,10 @@
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRC = src/push_swap.c \
-      utils/utils.c
+SRC = src/push_swap.c src/ft_exit.c\
+		src/parsing/parsing.c\
+		src/stack/stack_init.c\
+		utils/utils.c
 OBJ = $(SRC:.c=.o)
 
 # Règles
