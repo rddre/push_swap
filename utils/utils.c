@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:36:38 by asaracut          #+#    #+#             */
-/*   Updated: 2025/02/19 03:00:48 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/03/05 21:32:33 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_atoi(const char *str, t_stack *stack)
 	{
 		n = n * 10 + (*str - '0');
 		if ((n * sign) > INT_MAX || (n * sign) < INT_MIN)
-			ft_exit("Nombre hors limites", stack);
+			ft_exit("Nombre hors limites", stack, NULL);
 		str++;
 	}
 	return ((int)(n * sign));

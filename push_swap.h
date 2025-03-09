@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:36:46 by asaracut          #+#    #+#             */
-/*   Updated: 2025/02/19 05:30:25 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/03/04 12:15:01 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,11 @@ int		print(char *s);
 size_t	ft_strlen(const char *str);
 int     ft_atoi(const char *str, t_stack *stack);
 
-/*            src              */
+/*          parsing             */
 int     parsing(int nb_arg, char **arg, t_stack *stack);
+
+/*             algo             */
+void algo(t_stack *a, t_stack *b);
 
 /*            stack            */
 t_stack *init_stack(void);
@@ -61,6 +64,6 @@ void rrb(t_stack *stack);
 void rrr(t_stack *stack_a, t_stack *stack_b);
 
 /*            free              */
-void    ft_exit(char *str, t_stack *stack);
+void ft_exit(char *str, t_stack *a, t_stack *b);
 
 #endif

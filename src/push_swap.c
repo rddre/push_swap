@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:24:36 by asaracut          #+#    #+#             */
-/*   Updated: 2025/02/19 04:30:46 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/03/05 21:38:16 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,25 @@ void	print_stack(t_stack *stack)
 int main(int nb_arg, char **arg)
 {
     if (nb_arg == 1)
+	{
         return(print("erreur : pas d'argument"));
-    
-    t_stack *stack;
+	}
+	
+	t_stack *a;
+	t_stack *b;
 
-    stack = init_stack();
-    if (!stack)
-        ft_exit("Erreur d'allocation mémoire", NULL);
+	a = init_stack();
+	if (!a)
+    	ft_exit("Erreur d'allocation mémoire pour la pile A", NULL, NULL);
+	b = init_stack();
+	if (!b)
+		ft_exit("Erreur d'allocation mémoire pour la pile B", a, NULL);
 
-    parsing(nb_arg, arg, stack);
+    parsing(nb_arg, arg, a);
 
-    print_stack(stack);
-    
+	algo(a, b);
+
+    print_stack(a);
+    ft_exit(NULL, a, b);
     return (1);
 }

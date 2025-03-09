@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 01:09:33 by asaracut          #+#    #+#             */
-/*   Updated: 2025/02/19 04:48:29 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/03/04 12:06:03 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void free_list(t_node *list)
     }
 }
 
-void ft_exit(char *str, t_stack *stack)
+void ft_exit(char *str, t_stack *a, t_stack *b)
 {
     if (str)
     {
@@ -33,11 +33,15 @@ void ft_exit(char *str, t_stack *stack)
         print(str);
         print("\n");
     }
-    if (stack)
+    if (a)
     {
-        free_list(stack->top);
-        stack->top = NULL;
-        stack->size = 0;
+        free_list(a->top);
+        free(a);
+    }
+    if (b)
+    {
+        free_list(b->top);
+        free(b);
     }
     exit(EXIT_FAILURE);
 }

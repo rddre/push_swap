@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 06:13:57 by asaracut          #+#    #+#             */
-/*   Updated: 2025/02/19 04:46:32 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/03/05 20:40:44 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int	is_valid_number(char *str, t_stack *stack)
 	int i = 0;
 
 	if (!str || !str[0])
-		ft_exit("chaine de caractere vide ou nulle", stack);
+		ft_exit("chaine de caractere vide ou nulle", stack, NULL);
 	if (str[0] == '-' && str[1] != '\0')
 		i++; 
 
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
-			ft_exit("Caractere non conforme", stack);
+			ft_exit("Caractere non conforme", stack, NULL);
 		i++;
 	}
 	return (1);
@@ -38,7 +38,7 @@ int	is_duplicate(t_stack *stack, int num)
 	while (current)
 	{
 		if (current->value == num)
-			ft_exit("nombre doublon", stack);
+			ft_exit("nombre doublon", stack, NULL);
 		current = current->next;
 	}
 	return (0);

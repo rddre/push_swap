@@ -3,8 +3,10 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 SRC = src/push_swap.c src/ft_exit.c\
 		src/parsing/parsing.c\
-		src/stack/stack_init.c\
-		utils/utils.c
+		src/stack/stack_init.c src/stack/stack_reverse.c\
+		src/stack/stack_rotate.c src/stack/stack_swap_push.c\
+		utils/utils.c\
+		src/algo/algo.c
 OBJ = $(SRC:.c=.o)
 
 # Règles
