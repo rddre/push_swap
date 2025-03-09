@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 11:05:13 by asaracut          #+#    #+#             */
-/*   Updated: 2025/03/05 23:35:29 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/03/09 21:30:27 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,3 +159,5 @@ void algo(t_stack *a, t_stack *b)
     }
     print("pas encore fini\n");
 }
+
+//klsjfiosajfilsdjfiodsflkmsd
