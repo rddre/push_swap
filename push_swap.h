@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:36:46 by asaracut          #+#    #+#             */
-/*   Updated: 2025/03/04 12:15:01 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:28:10 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,19 @@ int     parsing(int nb_arg, char **arg, t_stack *stack);
 
 /*             algo             */
 void algo(t_stack *a, t_stack *b);
+
+/*          algo utils          */
+int     is_sorted(t_stack *stack);
+int     find_min(t_stack *stack);
+int     find_max(t_stack *stack);
+int     find_position(t_stack *stack, int value);
+int     get_distance(t_stack *stack, int value);
+int     quick_short(t_stack *a, t_stack *b);
+
+/*            lil algo           */
+void sort_three(t_stack *a);
+void sort_four(t_stack *a, t_stack *b);
+void sort_five(t_stack *a, t_stack *b);
 
 /*            stack            */
 t_stack *init_stack(void);

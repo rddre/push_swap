@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:24:36 by asaracut          #+#    #+#             */
-/*   Updated: 2025/03/05 21:38:16 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/04/18 22:58:36 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int main(int nb_arg, char **arg)
 
 	algo(a, b);
 
-    print_stack(a);
+    //print_stack(a);
     ft_exit(NULL, a, b);
     return (1);
 }

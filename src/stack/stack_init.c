@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 17:09:13 by asaracut          #+#    #+#             */
-/*   Updated: 2025/03/05 20:45:11 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/03/24 00:00:20 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,19 @@ void push(t_stack *stack, int value) // ajouter un element
     if (!new_node)
         ft_exit("malloc stack_init.c ligne 27", stack, NULL);
     new_node->value = value;
-    new_node->next = stack->top;
-    stack->top = new_node;
+    new_node->next = NULL;  // Ce sera le dernier élément
+    
+    if (stack->top == NULL) // Si la stack est vide, on l'initialise
+    {
+        stack->top = new_node;
+    }
+    else
+    {
+        t_node *current = stack->top;
+        while (current->next)  // Parcours jusqu'au dernier élément
+            current = current->next;
+        current->next = new_node;  // Ajout en fin de liste
+    }
     stack->size++;
 }
 
