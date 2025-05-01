@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 06:13:57 by asaracut          #+#    #+#             */
-/*   Updated: 2025/03/05 20:40:44 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/05/01 04:57:15 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	is_valid_number(char *str, t_stack *stack)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	if (!str || !str[0])
 		ft_exit("chaine de caractere vide ou nulle", stack, NULL);
 	if (str[0] == '-' && str[1] != '\0')
-		i++; 
-
+		i++;
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -57,7 +57,7 @@ void	check_arg(char *arg, t_stack *stack)
 		while (*token == ' ')
 			token++;
 		if (*token == '\0')
-			break;
+			break ;
 		start = token;
 		while (*token && *token != ' ')
 			token++;
