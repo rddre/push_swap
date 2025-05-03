@@ -6,7 +6,7 @@
 /*   By: asaracut <asaracut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 23:36:46 by asaracut          #+#    #+#             */
-/*   Updated: 2025/05/01 05:02:00 by asaracut         ###   ########.fr       */
+/*   Updated: 2025/05/03 04:40:57 by asaracut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ typedef struct s_stack
 	int		size;
 }		t_stack;
 
+/* Structure pour regrouper les paramètres des chunks */
+typedef struct s_chunk_params
+{
+	int	min_val;
+	int	max_val;
+	int	chunk_size;
+}		t_chunk_params;
+
 /*            utils             */
 int		print(char *s);
 size_t	ft_strlen(const char *str);
@@ -56,6 +64,19 @@ int		quick_short(t_stack *a, t_stack *b);
 void	sort_three(t_stack *a);
 void	sort_four(t_stack *a, t_stack *b);
 void	sort_five(t_stack *a, t_stack *b);
+
+/*            all function algo          */
+void	init_chunk_size(t_stack *a, int *chunk_size);
+void	init_sort_values(t_stack *a, int *min_val, int *max_val, int *mid_val);
+void	organize_b_stack(t_stack *b, int value, int min_val, int mid_val);
+void	first_partition(t_stack *a, t_stack *b, int min_val, int mid_val);
+int		check_posi_cost(int pos, int stack_size, int *best_cost, int *best_pos);
+int		find_best_position(t_stack *a, int current_min, int current_max);
+void	move_to_top(t_stack *a, int best_pos);
+void	move_to_top_b(t_stack *b, int pos);
+void	p_sin_chunk(t_stack *a, t_stack *b, int current_min, int current_max);
+void	process_chunks(t_stack *a, t_stack *b, t_chunk_params params);
+void	rebuild_stack(t_stack *a, t_stack *b);
 
 /*            stack            */
 t_stack	*init_stack(void);
